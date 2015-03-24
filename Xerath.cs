@@ -92,10 +92,10 @@ namespace ElXerath
                 return;
             }
 
-            Console.WriteLine("Injected");
+            Console.WriteLine("Enjekte Edildi");
 
             Notifications.AddNotification(
-                "ElXerath by jQuery v1.0.0.0", 1000);
+                "JQuery 'ElXerath'", 1000);
 
             spells[Spells.Q].SetSkillshot(0.6f, 100f, float.MaxValue, false, SkillshotType.SkillshotLine);
             spells[Spells.W].SetSkillshot(0.7f, 125f, float.MaxValue, false, SkillshotType.SkillshotCircle);
