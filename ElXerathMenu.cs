@@ -45,7 +45,7 @@ namespace ElXerath
 
             rMenu.SubMenu("CustomDelay").AddItem(new MenuItem("ElXerath.R.Delay", "Özel Gecikmeler").SetValue(true));
             for (var i = 1; i <= 3; i++)
-                rMenu.SubMenu("CustomDelay").SubMenu("Custom delay").AddItem(new MenuItem("Delay" + i, "Delay" + i).SetValue(new Slider(0, 1500, 0)));
+                rMenu.SubMenu("Özel Gecikmeler").SubMenu("Özel Gecikmeler").AddItem(new MenuItem("Delay" + i, "Delay" + i).SetValue(new Slider(0, 1500, 0)));
 
             _menu.AddSubMenu(rMenu);   
 
