@@ -49,7 +49,7 @@ namespace ElXerath
 
             _menu.AddSubMenu(rMenu);   
 
-            var hMenu = new Menu("Harass", "Dürtme");
+            var hMenu = new Menu("Dürtme", "Harass");
             hMenu.AddItem(new MenuItem("ElXerath.Harass.Q", "Q'yu Kullan").SetValue(true));
             hMenu.AddItem(new MenuItem("ElXerath.Harass.W", "W'yu Kullan").SetValue(true));
             hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.AutoHarass", "[Devamlı] Otomatik Dürtme", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
@@ -59,50 +59,51 @@ namespace ElXerath
 
             _menu.AddSubMenu(hMenu);
 
-            var lMenu = new Menu("Clear", "Koridor Temizleme");
-            lMenu.AddItem(new MenuItem("ElXerath.clear.Q", "Use Q").SetValue(true));
-            lMenu.AddItem(new MenuItem("ElXerath.clear.W", "Use W").SetValue(true));
+            var lMenu = new Menu("Koridor Temizleme", "Clear");
+            lMenu.AddItem(new MenuItem("ElXerath.clear.Q", "Q'yu Kullan").SetValue(true));
+            lMenu.AddItem(new MenuItem("ElXerath.clear.W", "W'yu Kullan").SetValue(true));
             lMenu.AddItem(new MenuItem("fasfsafsafsasfasfa", ""));
-            lMenu.AddItem(new MenuItem("ElXerath.jclear.Q", "Jungle Use Q").SetValue(true));
-            lMenu.AddItem(new MenuItem("ElXerath.jclear.W", "Jungle Use W").SetValue(true));
-            lMenu.AddItem(new MenuItem("ElXerath.jclear.E", "Jungle Use E").SetValue(true));
+            lMenu.AddItem(new MenuItem("ElXerath.jclear.Q", "Q'yu Jungleda Kullan").SetValue(true));
+            lMenu.AddItem(new MenuItem("ElXerath.jclear.W", "W'yu Jungleda Kullan").SetValue(true));
+            lMenu.AddItem(new MenuItem("ElXerath.jclear.E", "E'yi Jungleda Kullan").SetValue(true));
             lMenu.AddItem(new MenuItem("fasfsafsafsadsasasfasfa", ""));
-            lMenu.AddItem(new MenuItem("minmanaclear", "Auto harass mana")).SetValue(new Slider(55));
+            lMenu.AddItem(new MenuItem("minmanaclear", "Koridor Temizlemek İçin Mana")).SetValue(new Slider(55));
 
             _menu.AddSubMenu(lMenu);
 
             //ElXerath.Misc
-            var miscMenu = new Menu("Misc", "Misc");
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.off", "Turn drawings off").SetValue(false));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.Q", "Draw Q").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.W", "Draw W").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.E", "Draw E").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.R", "Draw R").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.Text", "Draw Text").SetValue(true));
-            miscMenu.AddItem(new MenuItem("ElXerath.Draw.RON", "Draw R target radius").SetValue(true));
+            var miscMenu = new Menu("Diğer Özellikler", "Misc");
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.off", "Çizimleri Kapat").SetValue(false));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.Q", "Q'yu Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.W", "W'yu Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.E", "E'yi Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.R", "R'yi Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.Text", "Metinleri Göster").SetValue(true));
+            miscMenu.AddItem(new MenuItem("ElXerath.Draw.RON", "R'nin Hedef Yarıçapını Göster").SetValue(true));
             miscMenu.AddItem(new MenuItem("useEFafsdsgdrmddsddsasfsasdsdsaadsd", ""));
-            miscMenu.AddItem(new MenuItem("ElXerath.Ignite", "Use ignite").SetValue(true));
-            miscMenu.AddItem(new MenuItem("ElXerath.misc.ks", "Killsteal mode").SetValue(false));
-            miscMenu.AddItem(new MenuItem("ElXerath.misc.Antigapcloser", "Antigapcloser").SetValue(true));
+            miscMenu.AddItem(new MenuItem("ElXerath.Ignite", "Tutuştur Kullan").SetValue(true));
+            miscMenu.AddItem(new MenuItem("ElXerath.misc.ks", "Kill Çalma Modu").SetValue(false));
+            miscMenu.AddItem(new MenuItem("ElXerath.misc.Antigapcloser", "Mesafe Kapatma Önleyici").SetValue(true));
            // miscMenu.AddItem(new MenuItem("ElXerath.misc.Notifications", "Use notifications").SetValue(true));
             miscMenu.AddItem(new MenuItem("useEdaadaDFafsdsgdrmddsddsasfsasdsdsaadsd", ""));
-            miscMenu.AddItem(new MenuItem("ElXerath.hitChance", "Hitchance Q").SetValue(new StringList(new[] { "Low", "Medium", "High", "Very High" }, 3)));
+            miscMenu.AddItem(new MenuItem("ElXerath.hitChance", "Hitchance Q").SetValue(new StringList(new[] { "Düşük", "Orta", "Yüksek", "En Yüksek" }, 3)));
 
             _menu.AddSubMenu(miscMenu);
 
             //Here comes the moneyyy, money, money, moneyyyy
-            var credits = new Menu("Credits", "jQuery");
-            credits.AddItem(new MenuItem("ElXerath.Paypal", "if you would like to donate via paypal:"));
+            var credits = new Menu("Yapımcı", "jQuery");
+            credits.AddItem(new MenuItem("ElXerath.Paypal", "Yapımcıya Paypal İle Destek Olmak İçin:"));
             credits.AddItem(new MenuItem("ElXerath.Email", "info@zavox.nl"));
             _menu.AddSubMenu(credits);
 
             _menu.AddItem(new MenuItem("422442fsaafs4242f", ""));
-            _menu.AddItem(new MenuItem("422442fsaafsf", "Version: 1.0.0.0"));
-            _menu.AddItem(new MenuItem("fsasfafsfsafsa", "Made By jQuery"));
+            _menu.AddItem(new MenuItem("422442fsaafsf", "Versiyon: 1.0.0.1"));
+            _menu.AddItem(new MenuItem("fsasfafsfsafsa", "jQuery tarafında yapılıp"));
+            _menu.AddItem(new MenuItem("fsasfafsfsafsaas", "ShamelessPerson Tarafından Çevrilmiştir"));
 
             _menu.AddToMainMenu();
 
-            Console.WriteLine("Menu Loaded");
+            Console.WriteLine("Menü Yüklendi.");
         }
     }
 }
