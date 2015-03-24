@@ -53,7 +53,7 @@ namespace ElXerath
                     Render.Circle.DrawCircle(ObjectManager.Player.Position, Xerath.spells[Spells.R].Range, Color.White);
 
             if (drawText)
-                Drawing.DrawText(playerPos.X - 70, playerPos.Y + 40, (rBool ? Color.Green : Color.Red), "{0}", (rBool ? "Auto harass enabled" : "Auto harass disabled"));
+                Drawing.DrawText(playerPos.X - 70, playerPos.Y + 40, (rBool ? Color.Green : Color.Red), "{0}", (rBool ? "Otomatik Durtme Aktif" : "Otomatik Durtme Deaktif"));
         }
     }
 }
