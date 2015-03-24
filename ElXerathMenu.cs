@@ -25,41 +25,41 @@ namespace ElXerath
             _menu.AddSubMenu(orbwalkerMenu);
 
             //ElXerath.TargetSelector
-            var targetSelector = new Menu("Target Selector", "TargetSelector");
+            var targetSelector = new Menu("Hedef Secme", "TargetSelector");
             TargetSelector.AddToMenu(targetSelector);
             _menu.AddSubMenu(targetSelector);
 
-            var cMenu = new Menu("Combo", "Combo");
-            cMenu.AddItem(new MenuItem("ElXerath.Combo.Q", "Use Q").SetValue(true));
-            cMenu.AddItem(new MenuItem("ElXerath.Combo.W", "Use W").SetValue(true));
-            cMenu.AddItem(new MenuItem("ElXerath.Combo.E", "Use E").SetValue(true));
-            cMenu.AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
+            var cMenu = new Menu("Kombo", "Combo");
+            cMenu.AddItem(new MenuItem("ElXerath.Combo.Q", "Q'yu Kullan").SetValue(true));
+            cMenu.AddItem(new MenuItem("ElXerath.Combo.W", "W'yu Kullan").SetValue(true));
+            cMenu.AddItem(new MenuItem("ElXerath.Combo.E", "E'yi Kullan").SetValue(true));
+            cMenu.AddItem(new MenuItem("ComboActive", "Kombo!").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             _menu.AddSubMenu(cMenu);
 
-            var rMenu = new Menu("Ult", "Ult");
-            rMenu.AddItem(new MenuItem("ElXerath.R.AutoUseR", "Auto use charges").SetValue(true));
-            rMenu.AddItem(new MenuItem("ElXerath.R.Mode", "Mode ").SetValue(new StringList(new[] { "Normal", "Custom delays", "OnTap", "Custom hitchance" })));
-            rMenu.AddItem(new MenuItem("ElXerath.R.OnTap", "Ult on tap").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
-            rMenu.AddItem(new MenuItem("ElXerath.R.Block", "Block movement").SetValue(true));
+            var rMenu = new Menu("Ulti", "Ult");
+            rMenu.AddItem(new MenuItem("ElXerath.R.AutoUseR", "Yükleri Otomatik Kullanma").SetValue(true));
+            rMenu.AddItem(new MenuItem("ElXerath.R.Mode", "Mod ").SetValue(new StringList(new[] { "Normal", "Özel Gecikmeler", "Dokunmayla", "Özel Vurma Şansı" })));
+            rMenu.AddItem(new MenuItem("ElXerath.R.OnTap", "Ultiyi Tıklama İle Kullan").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
+            rMenu.AddItem(new MenuItem("ElXerath.R.Block", "Hareketi Engelle").SetValue(true));
 
-            rMenu.SubMenu("CustomDelay").AddItem(new MenuItem("ElXerath.R.Delay", "Custom delays").SetValue(true));
+            rMenu.SubMenu("CustomDelay").AddItem(new MenuItem("ElXerath.R.Delay", "Özel Gecikmeler").SetValue(true));
             for (var i = 1; i <= 3; i++)
                 rMenu.SubMenu("CustomDelay").SubMenu("Custom delay").AddItem(new MenuItem("Delay" + i, "Delay" + i).SetValue(new Slider(0, 1500, 0)));
 
             _menu.AddSubMenu(rMenu);   
 
-            var hMenu = new Menu("Harass", "Harass");
-            hMenu.AddItem(new MenuItem("ElXerath.Harass.Q", "Use Q").SetValue(true));
-            hMenu.AddItem(new MenuItem("ElXerath.Harass.W", "Use W").SetValue(true));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.AutoHarass", "[Toggle] Auto harass", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.UseQAutoHarass", "Use Q").SetValue(true));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.UseWAutoHarass", "Use W").SetValue(true));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.harass.mana", "Auto harass mana")).SetValue(new Slider(55));
+            var hMenu = new Menu("Harass", "Dürtme");
+            hMenu.AddItem(new MenuItem("ElXerath.Harass.Q", "Q'yu Kullan").SetValue(true));
+            hMenu.AddItem(new MenuItem("ElXerath.Harass.W", "W'yu Kullan").SetValue(true));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.AutoHarass", "[Devamlı] Otomatik Dürtme", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.UseQAutoHarass", "Q'yu Kullan").SetValue(true));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.UseWAutoHarass", "W'yu Kullan").SetValue(true));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElXerath.harass.mana", "Otomatik Dürtme İçin Mana")).SetValue(new Slider(55));
 
             _menu.AddSubMenu(hMenu);
 
-            var lMenu = new Menu("Clear", "LaneClear");
+            var lMenu = new Menu("Clear", "Koridor Temizleme");
             lMenu.AddItem(new MenuItem("ElXerath.clear.Q", "Use Q").SetValue(true));
             lMenu.AddItem(new MenuItem("ElXerath.clear.W", "Use W").SetValue(true));
             lMenu.AddItem(new MenuItem("fasfsafsafsasfasfa", ""));
